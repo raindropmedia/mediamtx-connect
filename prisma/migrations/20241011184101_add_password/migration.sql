@@ -9,7 +9,7 @@ CREATE TABLE "new_Config" (
     "screenshotsDirectory" TEXT NOT NULL DEFAULT '/screenshots',
     "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" DATETIME NOT NULL,
-    "password" TEXT DEFAULT 'password',
+    "password" TEXT DEFAULT 'password'
 );
 INSERT INTO "new_Config" ("createdAt", "id", "mediaMtxApiPort", "mediaMtxUrl", "recordingsDirectory", "remoteMediaMtxUrl", "screenshotsDirectory", "updatedAt") SELECT "createdAt", "id", "mediaMtxApiPort", "mediaMtxUrl", "recordingsDirectory", "remoteMediaMtxUrl", "screenshotsDirectory", "updatedAt" FROM "Config";
 DROP TABLE "Config";
