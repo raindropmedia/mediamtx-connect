@@ -145,6 +145,23 @@ export default function ClientConfigForm({
             </GridFormItem>
           )}
         ></FormField>
+        <FormField
+          name="password"
+          control={form.control}
+          render={({ field }) => (
+            <GridFormItem label="App Password">
+              <>
+                <FormControl {...field}>
+                  <Input placeholder="password" />
+                </FormControl>
+                <FormDescription>
+                  Password for this App 
+                </FormDescription>
+                <FormMessage />
+              </>
+            </GridFormItem>
+          )}
+        ></FormField>
       </form>
     </Form>
   );
@@ -159,4 +176,5 @@ export const ClientConfigFormSchema = z.object({
   screenshotsDirectory: z.string().min(1),
   createdAt: z.coerce.date(),
   updatedAt: z.coerce.date(),
+  password: z.string().min(1),
 }) satisfies z.ZodType<Config>;
